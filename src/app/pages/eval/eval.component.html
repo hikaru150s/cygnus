@@ -1,0 +1,12 @@
+<nb-card>
+  <nb-card-header>
+    Evaluation List
+  </nb-card-header>
+  <nb-card-body>
+    <nb-list>
+      <nb-list-item *ngFor="let o of evalList">
+        <a [title]="o.name" [routerLink]="['/pages/eval', o.id]">{{ o.name }}</a>
+      </nb-list-item>
+    </nb-list>
+  </nb-card-body>
+</nb-card>

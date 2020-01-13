@@ -1,0 +1,19 @@
+<nb-card size="medium" class="full-visible-width">
+  <nb-card-body>
+    <nb-stepper disableStepNavigation linear>
+      <nb-step *ngFor="let q of questionList; last as isLast" [label]="'Question #' + (q.id)">
+        <nb-card sie="tiny">
+          <nb-card-header>{{ q.subject }}</nb-card-header>
+          <nb-card-body>
+            <nb-radio-group [value]="getValue(q.id)" (valueChange)="setValue(q.id, $event)" class="row">
+              <nb-radio class="col" *ngFor="let score of [1, 2, 3, 4, 5]" [value]="score">{{ score }}</nb-radio>
+            </nb-radio-group>
+          </nb-card-body>
+          <nb-card-footer>
+            <button nbButton nbStepperNext (click)="nextClicked(isLast, $event)">{{ isLast ? 'Submit' : 'Next' }}</button>
+          </nb-card-footer>
+        </nb-card>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cygnus</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>Loading ...</app-root>
+  <!-- src: https://www.codementor.io/adidance/awesome-infinite-css-loading-animation-r7jxbda5q -->
+  <style>
+    .app-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1003;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .loading-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      animation: fadeIn 2s steps(1, start);
+      animation-timing-function: cubic-bezier(.7, 0, 1, 1);
+    }
+
+    .ball {
+      top: -50px;
+      left: -150px;
+      position: absolute;
+      background: #4286f4;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      animation: horizontal 2s infinite, vertical 1s infinite, color 3s infinite;
+      animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1), ease-in-out;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .first {
+      animation-delay: 0s, .25s;
+      opacity: 1;
+    }
+
+    .second {
+      animation-delay: 0.1s, 0.35s;
+      opacity: 0.875;
+    }
+
+    .third {
+      animation-delay: 0.2s, 0.45s;
+      opacity: 0.75;
+    }
+
+    .fourth {
+      animation-delay: 0.3s, 0.55s;
+      opacity: 0.625;
+    }
+
+    .fifth {
+      animation-delay: 0.4s, 0.65s;
+      opacity: 0.5;
+    }
+
+    @keyframes color {
+      50% {
+        background: #cd43ef;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes vertical {
+      0% {
+        top: -50px;
+      }
+
+      50% {
+        top: 50px;
+      }
+
+      100% {
+        top: -50px;
+      }
+    }
+
+    @keyframes horizontal {
+      0% {
+        left: -150px;
+      }
+
+      50% {
+        left: 150px;
+      }
+
+      100% {
+        left: -150px;
+      }
+    }
+  </style>
+  <div id="nb-global-spinner" class="app-loader">
+    <div class="loading-animation">
+      <span class="ball first"></span>
+      <span class="ball second"></span>
+      <span class="ball third"></span>
+      <span class="ball fourth"></span>
+      <span class="ball fifth"></span>
+    </div>
+  </div>
+</body>
+</html>

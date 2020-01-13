@@ -1,0 +1,11 @@
+@import '../../@theme/styles/themes.scss';
+
+@include nb-install-component {
+  .ng-table {
+    color: nb-theme(text-basic-color) !important;
+  }
+
+  .ng-table tr:hover {
+    color: nb-theme(text-basic-color) !important;
+  }
+}

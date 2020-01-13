@@ -1,0 +1,2 @@
+<input nbInput placeholder="Pick Date" [nbDatepicker]="dateControl" [(ngModel)]="currentValue" readonly />
+<nb-datepicker #dateControl (dateChange)="update($event)"></nb-datepicker>

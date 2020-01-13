@@ -1,0 +1,129 @@
+<nb-card>
+  <nb-card-header>
+    {{ userName }}'s Card
+  </nb-card-header>
+  <nb-card-body>
+    <nb-tabset [fullWidth]="true">
+      <nb-tab tabTitle="Knowledge">
+        <div class="chart-container">
+          <ngx-charts-bar-vertical-2d [scheme]="colorScheme"
+                                      [results]="dataset?.user"
+                                      [xAxis]="true"
+                                      [yAxis]="true"
+                                      [legend]="true"
+                                      [showXAxisLabel]="false"
+                                      [showYAxisLabel]="true"
+                                      xAxisLabel="Tests"
+                                      yAxisLabel="Score">
+          </ngx-charts-bar-vertical-2d>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="Skill">
+        <div class="chart-container">
+          <ngx-charts-bar-vertical-2d [scheme]="colorScheme"
+                                      [results]="dataset?.group"
+                                      [xAxis]="true"
+                                      [yAxis]="true"
+                                      [legend]="true"
+                                      [showXAxisLabel]="false"
+                                      [showYAxisLabel]="true"
+                                      xAxisLabel="Tests"
+                                      yAxisLabel="Score">
+          </ngx-charts-bar-vertical-2d>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="Collaborative Performance">
+        <nb-flip-card>
+          <nb-card-front>
+            <nb-card>
+              <nb-card-header>
+                Personal
+              </nb-card-header>
+              <nb-card-body>
+                <div class="chart-container">
+                  <ngx-charts-polar-chart [scheme]="colorScheme"
+                                          [results]="dataset?.evaluation"
+                                          [xAxis]="true"
+                                          [yAxis]="true"
+                                          [legend]="true"
+                                          [showXAxisLabel]="false"
+                                          [showYAxisLabel]="true"
+                                          xAxisLabel="Tests"
+                                          yAxisLabel="Score"
+                                          [maxYAxisTickLength]="5">
+                  </ngx-charts-polar-chart>
+                </div>
+                <!--<table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Evaluation</th>
+                      <th>Sharing resources/ideas</th>
+                      <th>Negotiating ideas</th>
+                      <th>Regulating problem solving activities</th>
+                      <th>Maintaining positive communications</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let session of chart.evaluation">
+                      <td>{{ session.name }}</td>
+                      <td *ngFor="let unit of session.series">{{ unit.value }}</td>
+                      <td>{{ session.avg }}</td>
+                    </tr>
+                  </tbody>
+                </table>-->
+              </nb-card-body>
+              <nb-card-footer>
+                View Groups
+              </nb-card-footer>
+            </nb-card>
+          </nb-card-front>
+          <nb-card-back>
+            <nb-card>
+              <nb-card-header>
+                Group
+              </nb-card-header>
+              <nb-card-body>
+                <div class="chart-container">
+                  <ngx-charts-polar-chart [scheme]="colorScheme"
+                                          [results]="dataset?.groupData"
+                                          [xAxis]="true"
+                                          [yAxis]="true"
+                                          [legend]="true"
+                                          [showXAxisLabel]="false"
+                                          [showYAxisLabel]="true"
+                                          xAxisLabel="Tests"
+                                          yAxisLabel="Score"
+                                          [maxYAxisTickLength]="5">
+                  </ngx-charts-polar-chart>
+                </div>
+                <!--<table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Evaluation</th>
+                      <th>Sharing resources/ideas</th>
+                      <th>Negotiating ideas</th>
+                      <th>Regulating problem solving activities</th>
+                      <th>Maintaining positive communications</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let session of chart.evaluation">
+                      <td>{{ session.name }}</td>
+                      <td *ngFor="let unit of session.series">{{ unit.value }}</td>
+                      <td>{{ session.avg }}</td>
+                    </tr>
+                  </tbody>
+                </table>-->
+              </nb-card-body>
+              <nb-card-footer>
+                View Personal
+              </nb-card-footer>
+            </nb-card>
+          </nb-card-back>
+        </nb-flip-card>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

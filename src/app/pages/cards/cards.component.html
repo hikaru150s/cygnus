@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-header>
+    <span>Select Student:</span>
+    <nb-select placeholder="Student" [(selected)]="currentView">
+      <nb-option *ngFor="let o of selection" [value]="o.id">{{ o.name }}</nb-option>
+    </nb-select>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="text-center" *ngIf="currentView === null || currentView === undefined">
+      Select student to view the card
+    </div>
+    <div *ngIf="currentView !== null && currentView !== undefined">
+      <app-card [userId]="currentView"></app-card>
+    </div>
+  </nb-card-body>
+</nb-card>

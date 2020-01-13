@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "cygnus", "cygnus.njsproj", "{DA1CB910-5B90-44E9-889A-545E2B41C7AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA1CB910-5B90-44E9-889A-545E2B41C7AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1CB910-5B90-44E9-889A-545E2B41C7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1CB910-5B90-44E9-889A-545E2B41C7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1CB910-5B90-44E9-889A-545E2B41C7AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {467FAB7A-2EEA-4657-93C9-3EF4F5A158C0}
+	EndGlobalSection
+EndGlobal

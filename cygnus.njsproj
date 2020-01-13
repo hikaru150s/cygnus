@@ -1,0 +1,321 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>cygnus</Name>
+    <RootNamespace>cygnus</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>da1cb910-5b90-44e9-889a-545e2b41c7ac</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".editorconfig" />
+    <Content Include=".gitignore" />
+    <Content Include="angular.json" />
+    <Content Include="browserslist" />
+    <Content Include="e2e\protractor.conf.js" />
+    <Content Include="e2e\tsconfig.json" />
+    <Content Include="karma.conf.js" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="src\app\%40core\data\.gitkeep" />
+    <Content Include="src\app\%40core\data\README.md" />
+    <Content Include="src\app\%40core\mock\README.md" />
+    <Content Include="src\app\%40core\utils\.gitkeep" />
+    <Content Include="src\app\%40theme\components\date-editor\date-editor.component.html" />
+    <Content Include="src\app\%40theme\components\date-editor\date-editor.component.scss" />
+    <Content Include="src\app\%40theme\components\footer\footer.component.scss" />
+    <Content Include="src\app\%40theme\components\header\header.component.html" />
+    <Content Include="src\app\%40theme\components\header\header.component.scss" />
+    <Content Include="src\app\%40theme\components\question-form\question-form.component.html" />
+    <Content Include="src\app\%40theme\components\question-form\question-form.component.scss" />
+    <Content Include="src\app\%40theme\components\search-input\search-input.component.scss" />
+    <Content Include="src\app\%40theme\components\switcher\switcher.component.scss" />
+    <Content Include="src\app\%40theme\directives\.gitkeep" />
+    <Content Include="src\app\%40theme\layouts\one-column\one-column.layout.scss" />
+    <Content Include="src\app\%40theme\layouts\three-columns\three-columns.layout.scss" />
+    <Content Include="src\app\%40theme\layouts\two-columns\two-columns.layout.scss" />
+    <Content Include="src\app\%40theme\pipes\.gitkeep" />
+    <Content Include="src\app\%40theme\styles\pace.theme.scss" />
+    <Content Include="src\app\%40theme\styles\styles.scss" />
+    <Content Include="src\app\%40theme\styles\themes.scss" />
+    <Content Include="src\app\%40theme\styles\_layout.scss" />
+    <Content Include="src\app\%40theme\styles\_overrides.scss" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\app.component.scss" />
+    <Content Include="src\app\auth\auth.component.html" />
+    <Content Include="src\app\auth\auth.component.scss" />
+    <Content Include="src\app\auth\login\login.component.html" />
+    <Content Include="src\app\auth\login\login.component.scss" />
+    <Content Include="src\app\auth\register\register.component.html" />
+    <Content Include="src\app\auth\register\register.component.scss" />
+    <Content Include="src\app\pages\assignments-eval\assignments-eval.component.html" />
+    <Content Include="src\app\pages\assignments-eval\assignments-eval.component.scss" />
+    <Content Include="src\app\pages\assignments-groups\assignments-groups.component.html" />
+    <Content Include="src\app\pages\assignments-groups\assignments-groups.component.scss" />
+    <Content Include="src\app\pages\assignments-students\assignments-students.component.html" />
+    <Content Include="src\app\pages\assignments-students\assignments-students.component.scss" />
+    <Content Include="src\app\pages\cards\cards.component.html" />
+    <Content Include="src\app\pages\cards\cards.component.scss" />
+    <Content Include="src\app\pages\card\card.component.html" />
+    <Content Include="src\app\pages\card\card.component.scss" />
+    <Content Include="src\app\pages\dashboard\dashboard.component.html" />
+    <Content Include="src\app\pages\eval-form\eval-form.component.html" />
+    <Content Include="src\app\pages\eval-form\eval-form.component.scss" />
+    <Content Include="src\app\pages\eval\eval.component.html" />
+    <Content Include="src\app\pages\eval\eval.component.scss" />
+    <Content Include="src\app\pages\groups\groups.component.html" />
+    <Content Include="src\app\pages\groups\groups.component.scss" />
+    <Content Include="src\app\pages\group\group.component.html" />
+    <Content Include="src\app\pages\group\group.component.scss" />
+    <Content Include="src\app\pages\not-found\not-found.component.html" />
+    <Content Include="src\app\pages\not-found\not-found.component.scss" />
+    <Content Include="src\app\pages\pages.component.scss" />
+    <Content Include="src\app\pages\scoring-eval\scoring-eval.component.html" />
+    <Content Include="src\app\pages\scoring-eval\scoring-eval.component.scss" />
+    <Content Include="src\app\pages\scoring-groups\scoring-groups.component.html" />
+    <Content Include="src\app\pages\scoring-groups\scoring-groups.component.scss" />
+    <Content Include="src\app\pages\scoring-students\scoring-students.component.html" />
+    <Content Include="src\app\pages\scoring-students\scoring-students.component.scss" />
+    <Content Include="src\app\pages\students\students.component.html" />
+    <Content Include="src\app\pages\students\students.component.scss" />
+    <Content Include="src\app\pages\summary\summary.component.html" />
+    <Content Include="src\app\pages\summary\summary.component.scss" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="tsconfig.app.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tsconfig.spec.json" />
+    <Content Include="tslint.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="e2e\" />
+    <Folder Include="e2e\src\" />
+    <Folder Include="src\" />
+    <Folder Include="src\app\" />
+    <Folder Include="src\app\%40core\" />
+    <Folder Include="src\app\%40core\data\" />
+    <Folder Include="src\app\%40core\interfaces\" />
+    <Folder Include="src\app\%40core\mock\" />
+    <Folder Include="src\app\%40core\utils\" />
+    <Folder Include="src\app\%40theme\" />
+    <Folder Include="src\app\%40theme\components\" />
+    <Folder Include="src\app\%40theme\components\date-editor\" />
+    <Folder Include="src\app\%40theme\components\date-filter\" />
+    <Folder Include="src\app\%40theme\components\date-render\" />
+    <Folder Include="src\app\%40theme\components\footer\" />
+    <Folder Include="src\app\%40theme\components\header\" />
+    <Folder Include="src\app\%40theme\components\layout-direction-switcher\" />
+    <Folder Include="src\app\%40theme\components\question-form\" />
+    <Folder Include="src\app\%40theme\components\search-input\" />
+    <Folder Include="src\app\%40theme\components\switcher\" />
+    <Folder Include="src\app\%40theme\directives\" />
+    <Folder Include="src\app\%40theme\layouts\" />
+    <Folder Include="src\app\%40theme\layouts\one-column\" />
+    <Folder Include="src\app\%40theme\layouts\three-columns\" />
+    <Folder Include="src\app\%40theme\layouts\two-columns\" />
+    <Folder Include="src\app\%40theme\pipes\" />
+    <Folder Include="src\app\%40theme\styles\" />
+    <Folder Include="src\app\auth\" />
+    <Folder Include="src\app\auth\login\" />
+    <Folder Include="src\app\auth\register\" />
+    <Folder Include="src\app\pages\" />
+    <Folder Include="src\app\pages\assignments-eval\" />
+    <Folder Include="src\app\pages\assignments-groups\" />
+    <Folder Include="src\app\pages\assignments-students\" />
+    <Folder Include="src\app\pages\cards\" />
+    <Folder Include="src\app\pages\card\" />
+    <Folder Include="src\app\pages\dashboard\" />
+    <Folder Include="src\app\pages\eval-form\" />
+    <Folder Include="src\app\pages\eval\" />
+    <Folder Include="src\app\pages\groups\" />
+    <Folder Include="src\app\pages\group\" />
+    <Folder Include="src\app\pages\not-found\" />
+    <Folder Include="src\app\pages\scoring-eval\" />
+    <Folder Include="src\app\pages\scoring-groups\" />
+    <Folder Include="src\app\pages\scoring-students\" />
+    <Folder Include="src\app\pages\students\" />
+    <Folder Include="src\app\pages\summary\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\environments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="src\app\%40core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\users.ts" />
+    <TypeScriptCompile Include="src\app\%40core\interfaces\index.ts" />
+    <TypeScriptCompile Include="src\app\%40core\mock\mock-data.module.ts" />
+    <TypeScriptCompile Include="src\app\%40core\mock\users.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\module-import-guard.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\analytics.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\auth-guard.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\auth-guard.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\base-interceptor.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\base-interceptor.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\data-source.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\data-source.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\utils\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-editor\date-editor.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-editor\date-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-filter\date-filter.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-filter\date-filter.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-render\date-render.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\date-render\date-render.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\layout-direction-switcher\layout-direction-switcher.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\question-form\question-form.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\question-form\question-form.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\search-input\search-input.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\switcher\switcher.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\one-column\one-column.layout.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\three-columns\three-columns.layout.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\two-columns\two-columns.layout.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\capitalize.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\number-with-commas.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\plural.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\round.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\timing.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.corporate.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.cosmic.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.dark.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.default.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\theme.module.ts" />
+    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\auth\auth-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\auth\auth.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\auth\auth.component.ts" />
+    <TypeScriptCompile Include="src\app\auth\auth.module.ts" />
+    <TypeScriptCompile Include="src\app\auth\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\auth\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\auth\login\login.module.ts" />
+    <TypeScriptCompile Include="src\app\auth\register\register.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\auth\register\register.component.ts" />
+    <TypeScriptCompile Include="src\app\auth\register\register.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-eval\assignments-eval.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-eval\assignments-eval.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-eval\assignments-eval.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-groups\assignments-groups.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-groups\assignments-groups.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-groups\assignments-groups.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-students\assignments-students.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-students\assignments-students.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\assignments-students\assignments-students.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\cards\cards.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\cards\cards.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\cards\cards.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\card\card.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\card\card.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\card\card.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval-form\eval-form.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval-form\eval-form.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval-form\eval-form.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval\eval.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval\eval.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\eval\eval.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\groups\groups.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\groups\groups.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\groups\groups.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\group\group.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\group\group.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\group\group.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\not-found\not-found.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\not-found\not-found.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\not-found\not-found.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages-menu.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-eval\scoring-eval.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-eval\scoring-eval.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-eval\scoring-eval.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-groups\scoring-groups.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-groups\scoring-groups.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-groups\scoring-groups.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-students\scoring-students.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-students\scoring-students.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\scoring-students\scoring-students.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\students\students.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\students\students.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\students\students.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\summary\summary.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\summary\summary.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\summary\summary.module.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
