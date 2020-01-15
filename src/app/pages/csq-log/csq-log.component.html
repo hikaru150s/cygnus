@@ -1,1 +1,13 @@
-<p>csq-log works!</p>
+<nb-card>
+  <nb-card-header>
+    Constraint Satisfaction Quality
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table *ngIf="settings" [settings]="settings"
+                     [source]="source"
+                     (createConfirm)="onAdd($event)"
+                     (editConfirm)="onEdit($event)"
+                     (deleteConfirm)="onDelete($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

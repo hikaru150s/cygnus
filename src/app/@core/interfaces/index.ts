@@ -81,8 +81,8 @@ export interface IQuestion extends IBaseTimestamp {
 export interface IUserScoringLog {
   id?: number;
   reviewer: number;
-  target: number;
-  subject: number;
+  targetId: number;
+  subjectId: number;
   session: 'PRE' | 'POST';
   value: number;
   created_at: string | number | Date;
@@ -91,8 +91,8 @@ export interface IUserScoringLog {
 export interface IGroupScoringLog {
   id?: number;
   reviewer: number;
-  target: number;
-  subject: number;
+  targetId: number;
+  subjectId: number;
   value: number;
   created_at: string | number | Date;
 }
@@ -100,9 +100,9 @@ export interface IGroupScoringLog {
 export interface IEvaluationLog {
   id?: number;
   reviewer: number;
-  target: number;
-  subject: number;
-  question: number;
+  targetId: number;
+  subjectId: number;
+  questionId: number;
   value: number;
   created_at: string | number | Date;
 }
@@ -131,3 +131,24 @@ export interface ICardDataset {
   groupData: IChartGroupData[];
   groupAverage: number;
 }
+
+export interface IConstraint extends IBaseTimestamp {
+  description: string;
+  id?: number;
+  name: string;
+}
+
+export interface IGoal extends IConstraint { }
+
+export interface ICsqLog {
+  constraintId: number;
+  goalId: number;
+  id?: number;
+  reviewer: number;
+  targetId: number;
+  value: number;
+}
+
+export interface IFqLog extends ICsqLog { }
+
+export interface IGsqLog extends ICsqLog { }
