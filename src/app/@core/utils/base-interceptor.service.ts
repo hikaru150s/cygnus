@@ -34,10 +34,10 @@ export class BaseInterceptorService implements HttpInterceptor {
             headers: mutated.headers.set('Authorization', `bearer ${token.getValue()}`)
           });
         }
-        let handle = next.handle(mutated);
-        //handle.subscribe(res => {
+        const handle = next.handle(mutated);
+        // handle.subscribe(res => {
         //  console.log('Intercept:', { req, mutated, res });
-        //});
+        // });
         return handle;
       }),
     );

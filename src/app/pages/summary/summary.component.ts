@@ -26,7 +26,7 @@ export class SummaryComponent implements OnInit {
   }
 
   correlationStatus(_coefficient: number, significance: number) {
-    let absSig = Math.abs(significance);
+    const absSig = Math.abs(significance);
     if (absSig <= 0) {
       return 'No Correlation';
     } else if (absSig > 0 && absSig <= 0.25) {

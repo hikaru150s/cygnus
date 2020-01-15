@@ -249,8 +249,8 @@ export interface IFqGoalStructure {
 }
 
 export interface IFqDataMetric {
-  metric: IFqMetric[],
-  goalStruct: IFqGoalStructure[],
+  metric: IFqMetric[];
+  goalStruct: IFqGoalStructure[];
   stdDev: number;
   cohort: number;
 }

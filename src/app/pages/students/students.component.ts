@@ -104,7 +104,7 @@ export class StudentsComponent implements OnInit {
   }
 
   onEdit(e: ISmartTableEditConfirmEvent<IStudent>) {
-    let mapped: IStudentCompact = {
+    const mapped: IStudentCompact = {
       groupId: parseInt(e.newData.groupId.toString(), 10),
       active_reflective: parseInt(e.newData.active_reflective.toString(), 10),
       sensing_intuitive: parseInt(e.newData.sensing_intuitive.toString(), 10),

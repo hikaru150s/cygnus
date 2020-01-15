@@ -21,10 +21,10 @@ export class QuestionFormComponent implements OnInit {
   constructor(protected windowRef: NbWindowRef, private ds: DataSourceService) { }
 
   ngOnInit() {
-    //console.log('Question form init:', this);
-    //this.ds.getAll<IQuestion>('/api/question').subscribe(r => {
+    // console.log('Question form init:', this);
+    // this.ds.getAll<IQuestion>('/api/question').subscribe(r => {
     //  this.questionList = r;
-    //});
+    // });
   }
 
   getValue(questionId: number) {

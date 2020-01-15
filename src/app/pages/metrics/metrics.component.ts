@@ -89,17 +89,17 @@ export class MetricsComponent implements OnInit {
        *  This polyfill will reduce 1 level deep (from 3-level array to 2-level array), so we
        *  could ONLY use the polyfill only on certain known level.
        */
-      let constraints = gsqRaw.metric.map(r => gsqRaw.goalStruct.map(g => Object.keys(r.data[g.name]))).reduce((p, c) => p.concat(c), []).reduce((p, c) => p.concat(c), []);
+      const constraints = gsqRaw.metric.map(r => gsqRaw.goalStruct.map(g => Object.keys(r.data[g.name]))).reduce((p, c) => p.concat(c), []).reduce((p, c) => p.concat(c), []);
       this.gsq = {
         _raw: gsqRaw,
         goals: gsqRaw.goalStruct,
-        constraints: constraints,
+        constraints,
         metrics: gsqRaw.metric,
         resultSpan: gsqRaw.goalStruct.map(v => v.span).reduce((p, c) => p + c, 0) + 2,
       };
     });
     this.client.get<IPfsDataMetric>(new URL('/api/pfs/metric', env.server).href).subscribe(pfsRaw => {
-      let columns = [
+      const columns = [
         'studentId',
         'groupName',
         'studentName',

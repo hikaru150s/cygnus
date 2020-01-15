@@ -7,11 +7,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-  //{
+  // {
   //  title: 'FEATURES',
   //  group: true,
-  //},
-  //{
+  // },
+  // {
   //  title: 'Auth',
   //  icon: 'lock-outline',
   //  children: [
@@ -32,5 +32,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //      link: '/auth/reset-password',
   //    },
   //  ],
-  //},
+  // },
 ];

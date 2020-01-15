@@ -103,7 +103,7 @@ export class PagesComponent {
 
   public constructor(private auteService: NbAuthService) {
     this.auteService.getToken().subscribe((token: NbAuthJWTToken) => {
-      if (token.getPayload()['role'] === 'TEACHER') {
+      if (token.getPayload().role === 'TEACHER') {
         this.menu = [...MENU_ITEMS, ...this.teachers];
       } else {
         this.menu = [...MENU_ITEMS, ...this.students];
