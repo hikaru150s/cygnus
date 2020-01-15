@@ -152,3 +152,105 @@ export interface ICsqLog {
 export interface IFqLog extends ICsqLog { }
 
 export interface IGsqLog extends ICsqLog { }
+
+export interface ICsqMetric {
+  data: {
+    [goalName: string]: {
+      [constraintName: string]: number;
+    };
+  };
+  groupId: number;
+  groupName: string;
+  metric: {
+    [goalName: string]: {
+      [constrainName: string]: number;
+    };
+  };
+}
+
+export interface ICsqGoalStructure {
+  name: string;
+  span: number;
+}
+
+export interface ICsqConstraintStructure {
+  [constraintName: string]: {
+    cohort: number;
+    stdDev: number;
+  };
+}
+
+export interface ICsqDataMetric {
+  metric: ICsqMetric[];
+  goalStruct: ICsqGoalStructure[];
+  constraintStruct: ICsqConstraintStructure;
+}
+
+export interface IPfsTreeRowStructure {
+  // Common
+  childEntries?: Array<IPfsTreeRowStructure>;
+  cpSatisfaction?: number;
+  cpValue?: number;
+  expanded?: boolean;
+  groupCohort?: number;
+  // Group-only
+  groupName?: string;
+  groupSatisfaction?: number;
+  groupStdDev?: number;
+  kind: 'individual' | 'group';
+  // Individual-only
+  studentId?: number;
+  studentName?: string;
+}
+
+export interface IPfsDataMetric {
+  treeData: IPfsTreeRowStructure[];
+  stdDev: number;
+  cohort: number;
+}
+
+export interface IGsqMetric {
+  constraintAverage: number;
+  constraintSatisfaction: number;
+  data: {
+    [goalName: string]: {
+      [constraintName: string]: number;
+    };
+  };
+  groupId: number;
+  groupName: string;
+}
+
+export interface IGsqGoalStructure {
+  name: string;
+  span: number;
+}
+
+export interface IGsqDataMetric {
+  metric: IGsqMetric[];
+  goalStruct: IGsqGoalStructure[];
+  stdDev: number;
+  cohort: number;
+}
+
+export interface IFqMetric {
+  constraintAverage: number;
+  constraintSatisfaction: number;
+  data: {
+    [goalName: string]: number;
+  };
+  groupId: number;
+  groupName: string;
+}
+
+export interface IFqGoalStructure {
+  name: string;
+  span: number;
+}
+
+export interface IFqDataMetric {
+  metric: IFqMetric[],
+  goalStruct: IFqGoalStructure[],
+  stdDev: number;
+  cohort: number;
+}

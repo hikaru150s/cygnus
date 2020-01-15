@@ -1,1 +1,134 @@
-<p>metrics works!</p>
+<nb-card size="giant">
+  <nb-card-header>Metrics</nb-card-header>
+  <nb-card-body>
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Constraint Satisfaction Quality" [nbSpinner]="!csq" nbSpinnerSize="giant">
+        <table *ngIf="csq" class="table table-bordered table-hover ">
+          <thead>
+            <tr>
+              <th rowspan="3">ID</th>
+              <th rowspan="3">Group Name</th>
+              <th [colspan]="csq.dataColSpan">Data</th>
+              <th [colspan]="csq.metricColSpan">Metric</th>
+            </tr>
+            <tr>
+              <th *ngFor="let goal of csq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th *ngFor="let goal of csq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+            </tr>
+            <tr>
+              <th *ngFor="let constraint of csq.constraints">{{ constraint }}</th>
+              <th *ngFor="let constraint of csq.constraints">{{ constraint }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of csq.metrics">
+              <td>{{ row.groupId }}</td>
+              <td>{{ row.groupName }}</td>
+              <ng-container *ngFor="let goal of csq.goals">
+                <ng-container *ngFor="let constraint of csq.constraints">
+                  <td>{{ row.data[goal.name][constraint] }}</td>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let goal of goals">
+                <ng-container *ngFor="let constraint of constraints">
+                  <td>{{ row.metric[goal.name][constraint] }}</td>
+                </ng-container>
+              </ng-container>
+            </tr>
+            <tr>
+              <td colspan="2">Standard Deviation</td>
+              <td *ngFor="let constraint of csq.constraints">{{ csq.constraintStruct[constraint.name].stdDev }}</td>
+            </tr>
+            <tr>
+              <td colspan="2">Cohort</td>
+              <td *ngFor="let constraint of csq.constraints">{{ csq.constraintStruct[constraint.name].cohort }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </nb-tab>
+      <nb-tab tabTitle="Perceived Formation Satisfaction" [nbSpinner]="!pfs" nbSpinnerSize="giant">
+        <table *ngIf="pfs" [nbTreeGrid]="pfs.dataSource" nbSort (sort)="changeSort($event)" equalColumnsWidth>
+          <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="pfs.allColumns"></tr>
+          <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: pfs.allColumns"></tr>
+          <ng-container *ngFor="let column of pfs.defaultColumns" [nbTreeGridColumnDef]="column">
+            <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(column)" *nbTreeGridHeaderCellDef>
+              {{column}}
+            </th>
+            <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row[column] ? row[column] : '-'}}</td>
+          </ng-container>
+        </table>
+      </nb-tab>
+      <nb-tab tabTitle="Goal Satisfaction Quality" [nbSpinner]="!gsq" nbSpinnerSize="giant">
+        <table *ngIf="gsq" class="table table-bordered table-hover ">
+          <thead>
+            <tr>
+              <th rowspan="2">ID</th>
+              <th rowspan="2">Group Name</th>
+              <th *ngFor="let goal of gsq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th rowspan="2">Constraint Average</th>
+              <th rowspan="2">Constraint Satsifaction</th>
+            </tr>
+            <tr>
+              <th *ngFor="let constraint of gsq.constraints">{{ constraint }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of gsq.metrics">
+              <td>{{ row.groupId }}</td>
+              <td>{{ row.groupName }}</td>
+              <ng-container *ngFor="let goal of gsq.goals">
+                <ng-container *ngFor="let constraint of gsq.constraints">
+                  <td>{{ row.data[goal.name][constraint] }}</td>
+                </ng-container>
+              </ng-container>
+              <td>{{ row.constraintAverage }}</td>
+              <td>{{ row.constraintSatisfaction }}</td>
+            </tr>
+            <tr>
+              <td [colspan]="gsq.resultSpan">Standard Deviation</td>
+              <td>{{ gsq._raw.stdDev }}</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td [colspan]="gsq.resultSpan">Cohort</td>
+              <td>{{ gsq._raw.cohort }}</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </nb-tab>
+      <nb-tab tabTitle="Formation Quality" [nbSpinner]="!fq" nbSpinnerSize="giant">
+        <table *ngIf="fq" class="table table-bordered table-hover ">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Group Name</th>
+              <th *ngFor="let goal of fq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th>Constraint Average</th>
+              <th>Constraint Satsifaction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of fq.metrics">
+              <td>{{ row.groupId }}</td>
+              <td>{{ row.groupName }}</td>
+              <td *ngFor="let goal of fq.goals">{{ row.data[goal.name] }}</td>
+              <td>{{ row.constraintAverage }}</td>
+              <td>{{ row.constraintSatisfaction }}</td>
+            </tr>
+            <tr>
+              <td [colspan]="fq.resultSpan">Standard Deviation</td>
+              <td>{{ fq._raw.stdDev }}</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td [colspan]="fq.resultSpan">Cohort</td>
+              <td>{{ fq._raw.cohort }}</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>
