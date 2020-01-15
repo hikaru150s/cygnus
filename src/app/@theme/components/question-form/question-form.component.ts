@@ -28,21 +28,21 @@ export class QuestionFormComponent implements OnInit {
   }
 
   getValue(questionId: number) {
-    const needle = this.logs.find(v => v.question === questionId);
+    const needle = this.logs.find(v => v.questionId === questionId);
     return needle ? needle.value : null;
   }
 
   setValue(questionId: number, value: any) {
-    const needle = this.logs.findIndex(v => v.question === questionId);
+    const needle = this.logs.findIndex(v => v.questionId === questionId);
     if (needle >= 0) {
       this.logs[needle].value = value;
     } else {
       this.logs.push({
         created_at: new Date(),
-        question: questionId,
+        questionId: questionId,
         reviewer: this.reviewerId,
-        subject: this.evalId,
-        target: this.targetId,
+        subjectId: this.evalId,
+        targetId: this.targetId,
         value,
       });
     }
