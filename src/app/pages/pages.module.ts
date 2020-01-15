@@ -20,6 +20,12 @@ import { ScoringEvalModule } from './scoring-eval/scoring-eval.module';
 import { CardsModule } from './cards/cards.module';
 import { EvalFormModule } from './eval-form/eval-form.module';
 import { SummaryModule } from './summary/summary.module';
+import { GoalsModule } from './goals/goals.module';
+import { ConstraintsModule } from './constraints/constraints.module';
+import { CsqLogModule } from './csq-log/csq-log.module';
+import { FqLogModule } from './fq-log/fq-log.module';
+import { GsqLogModule } from './gsq-log/gsq-log.module';
+import { MetricsModule } from './metrics/metrics.module';
 
 @NgModule({
   imports: [
@@ -42,6 +48,12 @@ import { SummaryModule } from './summary/summary.module';
     CardsModule,
     EvalFormModule,
     SummaryModule,
+    GoalsModule,
+    ConstraintsModule,
+    CsqLogModule,
+    FqLogModule,
+    GsqLogModule,
+    MetricsModule,
   ],
   declarations: [
     PagesComponent,
