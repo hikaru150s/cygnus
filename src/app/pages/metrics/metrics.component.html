@@ -8,12 +8,12 @@
             <tr>
               <th rowspan="3">ID</th>
               <th rowspan="3">Group Name</th>
-              <th [colspan]="csq.dataColSpan">Data</th>
-              <th [colspan]="csq.metricColSpan">Metric</th>
+              <th [attr.colspan]="csq.dataColSpan">Data</th>
+              <th [attr.colspan]="csq.metricColSpan">Metric</th>
             </tr>
             <tr>
-              <th *ngFor="let goal of csq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
-              <th *ngFor="let goal of csq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th *ngFor="let goal of csq.goals" [attr.colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th *ngFor="let goal of csq.goals" [attr.colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
             </tr>
             <tr>
               <th *ngFor="let constraint of csq.constraints">{{ constraint }}</th>
@@ -64,7 +64,7 @@
             <tr>
               <th rowspan="2">ID</th>
               <th rowspan="2">Group Name</th>
-              <th *ngFor="let goal of gsq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th *ngFor="let goal of gsq.goals" [attr.colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
               <th rowspan="2">Constraint Average</th>
               <th rowspan="2">Constraint Satsifaction</th>
             </tr>
@@ -85,12 +85,12 @@
               <td>{{ row.constraintSatisfaction }}</td>
             </tr>
             <tr>
-              <td [colspan]="gsq.resultSpan">Standard Deviation</td>
+              <td [attr.colspan]="gsq.resultSpan">Standard Deviation</td>
               <td>{{ gsq._raw.stdDev }}</td>
               <td>&nbsp;</td>
             </tr>
             <tr>
-              <td [colspan]="gsq.resultSpan">Cohort</td>
+              <td [attr.colspan]="gsq.resultSpan">Cohort</td>
               <td>{{ gsq._raw.cohort }}</td>
               <td>&nbsp;</td>
             </tr>
@@ -103,7 +103,7 @@
             <tr>
               <th>ID</th>
               <th>Group Name</th>
-              <th *ngFor="let goal of fq.goals" [colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
+              <th *ngFor="let goal of fq.goals" [attr.colspan]="goal.span ? goal.span : 1">{{ goal.name }}</th>
               <th>Constraint Average</th>
               <th>Constraint Satsifaction</th>
             </tr>
@@ -117,12 +117,12 @@
               <td>{{ row.constraintSatisfaction }}</td>
             </tr>
             <tr>
-              <td [colspan]="fq.resultSpan">Standard Deviation</td>
+              <td [attr.colspan]="fq.resultSpan">Standard Deviation</td>
               <td>{{ fq._raw.stdDev }}</td>
               <td>&nbsp;</td>
             </tr>
             <tr>
-              <td [colspan]="fq.resultSpan">Cohort</td>
+              <td [attr.colspan]="fq.resultSpan">Cohort</td>
               <td>{{ fq._raw.cohort }}</td>
               <td>&nbsp;</td>
             </tr>
