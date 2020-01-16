@@ -120,7 +120,7 @@ export class PagesComponent {
           link: '/pages/fq'
         },
         {
-          title: 'Group Satisfaction Quality',
+          title: 'Goal Satisfaction Quality',
           link: '/pages/gsq'
         },
         {
