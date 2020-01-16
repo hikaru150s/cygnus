@@ -46,15 +46,15 @@ export class ScoringEvalComponent implements OnInit {
         type: 'text',
         editable: false,
       },
-      target: {
+      targetId: {
         title: 'Target',
         type: 'text',
       },
-      subject: {
+      subjectId: {
         title: 'Subject',
         type: 'text',
       },
-      question: {
+      questionId: {
         title: 'Question',
         type: 'text',
       },
