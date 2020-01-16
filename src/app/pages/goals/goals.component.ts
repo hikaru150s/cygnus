@@ -46,6 +46,10 @@ export class GoalsComponent implements OnInit {
         title: 'Name',
         type: 'text',
       },
+      description: {
+        title: 'Name',
+        type: 'text',
+      },
     },
   };
 
