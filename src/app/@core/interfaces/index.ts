@@ -56,11 +56,7 @@ export interface IGroup extends IBaseTimestamp {
 }
 
 export interface IStudent extends IUser {
-  groupId: number;
-  active_reflective: number;
-  sensing_intuitive: number;
-  sequential_global: number;
-  visual_verbal: number;
+  groupId?: number;
 }
 
 export interface IUserScoring extends IBaseTimestamp {
