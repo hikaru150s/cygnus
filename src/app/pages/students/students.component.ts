@@ -7,10 +7,6 @@ import { environment as env } from 'src/environments/environment';
 
 interface IStudentCompact {
   groupId?: number;
-  active_reflective: number;
-  sensing_intuitive: number;
-  sequential_global: number;
-  visual_verbal: number;
 }
 
 @Component({
@@ -82,22 +78,6 @@ export class StudentsComponent implements OnInit {
               },
             },
           },
-          active_reflective: {
-            title: 'Active - Reflective',
-            type: 'text',
-          },
-          sensing_intuitive: {
-            title: 'Sensing - Intuitive',
-            type: 'text',
-          },
-          sequential_global: {
-            title: 'Sequential - Global',
-            type: 'text',
-          },
-          visual_verbal: {
-            title: 'Visual - Verbal',
-            type: 'text',
-          },
         },
       };
     });
@@ -106,10 +86,6 @@ export class StudentsComponent implements OnInit {
   onEdit(e: ISmartTableEditConfirmEvent<IStudent>) {
     const mapped: IStudentCompact = {
       groupId: parseInt(e.newData.groupId.toString(), 10),
-      active_reflective: parseInt(e.newData.active_reflective.toString(), 10),
-      sensing_intuitive: parseInt(e.newData.sensing_intuitive.toString(), 10),
-      sequential_global: parseInt(e.newData.sequential_global.toString(), 10),
-      visual_verbal: parseInt(e.newData.visual_verbal.toString(), 10),
     };
     this.ds.edit<IStudent, IStudentCompact>('/api/student', e.data.id, mapped).subscribe(saved => {
       e.confirm.resolve(saved);
