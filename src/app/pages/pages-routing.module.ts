@@ -18,6 +18,12 @@ import { ScoringEvalComponent } from './scoring-eval/scoring-eval.component';
 import { CardsComponent } from './cards/cards.component';
 import { EvalFormComponent } from './eval-form/eval-form.component';
 import { SummaryComponent } from './summary/summary.component';
+import { GoalsComponent } from './goals/goals.component';
+import { ConstraintsComponent } from './constraints/constraints.component';
+import { CsqLogComponent } from './csq-log/csq-log.component';
+import { FqLogComponent } from './fq-log/fq-log.component';
+import { GsqLogComponent } from './gsq-log/gsq-log.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 const routes: Routes = [{
   path: '',
@@ -82,6 +88,30 @@ const routes: Routes = [{
     {
       path: 'summary',
       component: SummaryComponent,
+    },
+    {
+      path: 'goals',
+      component: GoalsComponent,
+    },
+    {
+      path: 'constaints',
+      component: ConstraintsComponent,
+    },
+    {
+      path: 'csq',
+      component: CsqLogComponent,
+    },
+    {
+      path: 'fq',
+      component: FqLogComponent,
+    },
+    {
+      path: 'gsq',
+      component: GsqLogComponent,
+    },
+    {
+      path: 'metrics',
+      component: MetricsComponent,
     },
     {
       path: '',

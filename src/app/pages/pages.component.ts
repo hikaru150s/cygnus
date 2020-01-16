@@ -99,6 +99,36 @@ export class PagesComponent {
       icon: 'trending-up-outline',
       link: '/pages/summary',
     },
+    {
+      title: 'Satisfactions',
+      icon: 'checkmark-circle-outline',
+      children: [
+        {
+          title: 'Goals',
+          link: '/pages/goals'
+        },
+        {
+          title: 'Constraints',
+          link: '/pages/constaints'
+        },
+        {
+          title: 'Constraints Satisfaction Quality',
+          link: '/pages/csq'
+        },
+        {
+          title: 'Formation Quality',
+          link: '/pages/fq'
+        },
+        {
+          title: 'Group Satisfaction Quality',
+          link: '/pages/gsq'
+        },
+        {
+          title: 'Metrics',
+          link: '/pages/metrics'
+        },
+      ],
+    },
   ];
 
   public constructor(private auteService: NbAuthService) {
