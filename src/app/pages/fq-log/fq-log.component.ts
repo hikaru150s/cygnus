@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
 import { DateRenderComponent } from 'src/app/@theme/components';
 import * as moment from 'moment';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-fq-log',
@@ -66,11 +67,13 @@ export class FqLogComponent implements OnInit {
                 title: 'ID',
                 type: 'text',
                 editable: false,
+                compareFunction: stringIdComparer,
               },
               reviewer: {
                 title: 'Reviewer',
                 type: 'text',
                 editable: false,
+                compareFunction: stringIdComparer,
               },
               goalId: {
                 title: 'Goal',

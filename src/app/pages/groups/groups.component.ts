@@ -9,6 +9,7 @@ import {
   IGroup,
 } from 'src/app/@core/interfaces';
 import { DataSourceService } from 'src/app/@core/utils/data-source.service';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-groups',
@@ -41,6 +42,7 @@ export class GroupsComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',

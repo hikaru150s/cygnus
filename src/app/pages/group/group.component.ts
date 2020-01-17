@@ -5,6 +5,7 @@ import { environment as env } from 'src/environments/environment';
 import { DataSourceService } from 'src/app/@core/utils/data-source.service';
 import { ISmartTableCreateConfirmEvent, ISmartTableEditConfirmEvent, ISmartTableDeleteConfirmEvent, IGroup, IStudent } from 'src/app/@core/interfaces';
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-group',
@@ -12,7 +13,7 @@ import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
   styleUrls: ['./group.component.scss']
 })
 export class GroupComponent implements OnInit {
-  groupNum: number = null;
+  groupNum: string = null;
   groupName: string = null;
   settings = {
     actions: {
@@ -25,6 +26,7 @@ export class GroupComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',

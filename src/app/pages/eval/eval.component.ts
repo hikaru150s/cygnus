@@ -8,7 +8,7 @@ import { IEvaluation } from 'src/app/@core/interfaces';
   styleUrls: ['./eval.component.scss']
 })
 export class EvalComponent implements OnInit {
-  evalList: { id: number; name: string; }[] = [];
+  evalList: { id: string; name: string; }[] = [];
 
   constructor(private ds: DataSourceService) { }
 

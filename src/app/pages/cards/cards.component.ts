@@ -9,7 +9,7 @@ import { IStudent } from 'src/app/@core/interfaces';
 })
 export class CardsComponent implements OnInit {
   currentView: number = null;
-  selection: { id: number, name: string }[] = [];
+  selection: { id: string, name: string }[] = [];
 
   constructor(private ds: DataSourceService) { }
 

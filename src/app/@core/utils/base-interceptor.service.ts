@@ -13,10 +13,18 @@ export class BaseInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return this.authService.getToken().pipe(
       flatMap((token: NbAuthJWTToken) => {
+        let reviewer: string = token.getPayload() ? token.getPayload()['sub'] : '-1';
         let mutated = req.clone();
         const SAFE_PATH = [
           '/api/user',
           '/api/login',
+        ];
+        const INJECTING_PATH = [
+          '/api/user_scoring_log',
+          '/api/group_scoring_log',
+          '/api/gsq/log',
+          '/api/fq/log',
+          '/api/csq/log',
         ];
         if (req.url === env.server + '/api/user' && req.method.toLowerCase() === 'post') {
           mutated = mutated.clone({
@@ -31,13 +39,18 @@ export class BaseInterceptorService implements HttpInterceptor {
         }
         if (SAFE_PATH.map(v => env.server + v).includes(req.url) === false && req.method !== 'post') {
           mutated = mutated.clone({
-            headers: mutated.headers.set('Authorization', `bearer ${token.getValue()}`)
+            headers: mutated.headers.set('Authorization', `bearer ${token.getValue()}`),
+          });
+        }
+        if (INJECTING_PATH.map(v => env.server + v).includes(req.url) === true && req.method !== 'post') {
+          mutated = mutated.clone({
+            body: {...req.body, reviewer},
           });
         }
         const handle = next.handle(mutated);
-        // handle.subscribe(res => {
-        //  console.log('Intercept:', { req, mutated, res });
-        // });
+        handle.subscribe(res => {
+         console.log('Intercept:', { req, mutated, res });
+        });
         return handle;
       }),
     );

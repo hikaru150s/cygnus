@@ -12,7 +12,7 @@ import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() userId: number = null;
+  @Input() userId: string = null;
   userName = null;
   dataset: ICardDataset = null;
   colorScheme: any;

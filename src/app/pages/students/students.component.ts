@@ -4,9 +4,10 @@ import { DataSourceService } from 'src/app/@core/utils/data-source.service';
 import { IGroup, IListPair, ISmartTableEditConfirmEvent, ISmartTableCreateConfirmEvent, ISmartTableDeleteConfirmEvent, IStudent } from 'src/app/@core/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
+import { stringIdComparer } from '../../@core/utils';
 
 interface IStudentCompact {
-  groupId?: number;
+  groupId?: string;
 }
 
 @Component({
@@ -57,6 +58,7 @@ export class StudentsComponent implements OnInit {
             title: 'ID',
             type: 'text',
             editable: false,
+            compareFunction: stringIdComparer,
           },
           name: {
             title: 'Name',
@@ -85,7 +87,7 @@ export class StudentsComponent implements OnInit {
 
   onEdit(e: ISmartTableEditConfirmEvent<IStudent>) {
     const mapped: IStudentCompact = {
-      groupId: parseInt(e.newData.groupId.toString(), 10),
+      groupId: e.newData.groupId,
     };
     this.ds.edit<IStudent, IStudentCompact>('/api/student', e.data.id, mapped).subscribe(saved => {
       e.confirm.resolve(saved);

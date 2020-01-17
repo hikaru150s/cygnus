@@ -6,6 +6,7 @@ import { DateEditorComponent, DateRenderComponent, DateFilterComponent } from 's
 import { DataSourceService } from 'src/app/@core/utils/data-source.service';
 import { ISmartTableCreateConfirmEvent, ISmartTableEditConfirmEvent, ISmartTableDeleteConfirmEvent, IUserScoring } from 'src/app/@core/interfaces';
 import * as moment from 'moment';
+import { stringIdComparer } from '../../@core/utils';
 
 
 @Component({
@@ -39,6 +40,7 @@ export class AssignmentsStudentsComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',

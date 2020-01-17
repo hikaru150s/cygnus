@@ -11,6 +11,7 @@ import {
   ISmartTableDeleteConfirmEvent
 } from 'src/app/@core/interfaces';
 import * as moment from 'moment';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-assignments-groups',
@@ -44,6 +45,7 @@ export class AssignmentsGroupsComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',

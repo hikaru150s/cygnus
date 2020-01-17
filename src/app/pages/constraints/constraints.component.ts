@@ -4,6 +4,7 @@ import { ISmartTableDeleteConfirmEvent, ISmartTableEditConfirmEvent, ISmartTable
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
 import { DataSourceService } from '../../@core/utils/data-source.service';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-constraints',
@@ -36,13 +37,14 @@ export class ConstraintsComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',
         type: 'text',
       },
       description: {
-        title: 'Name',
+        title: 'Description',
         type: 'text',
       },
     },

@@ -14,6 +14,7 @@ import {
 } from 'src/app/@core/interfaces';
 import { DataSourceService } from 'src/app/@core/utils/data-source.service';
 import * as moment from 'moment';
+import { stringIdComparer } from '../../@core/utils';
 
 @Component({
   selector: 'app-assignments-eval',
@@ -47,6 +48,7 @@ export class AssignmentsEvalComponent implements OnInit {
         title: 'ID',
         type: 'text',
         editable: false,
+        compareFunction: stringIdComparer,
       },
       name: {
         title: 'Name',

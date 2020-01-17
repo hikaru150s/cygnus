@@ -15,7 +15,7 @@ import { DataSourceService } from '../../@core/utils/data-source.service';
 })
 export class EvalFormComponent implements OnInit {
   evalId: number = null;
-  userList: { id: number; name: string; status: boolean; }[] = [];
+  userList: { id: string; name: string; status: boolean; }[] = [];
   reviewerId: number;
   questionList: IQuestion[] = [];
 
@@ -47,7 +47,7 @@ export class EvalFormComponent implements OnInit {
     });
   }
 
-  take(targetId: number, targetName: string) {
+  take(targetId: string, targetName: string) {
     const w = this.windowService.open(QuestionFormComponent, {
       title: `Evaluating ${targetName}`,
       context: {

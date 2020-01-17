@@ -42,7 +42,7 @@ export interface IQueryParam {
 }
 
 export interface IUser extends IBaseTimestamp {
-  id?: number;
+  id?: string;
   name: string;
   email: string;
   password?: string;
@@ -51,16 +51,16 @@ export interface IUser extends IBaseTimestamp {
 }
 
 export interface IGroup extends IBaseTimestamp {
-  id?: number;
+  id?: string;
   name: string;
 }
 
 export interface IStudent extends IUser {
-  groupId?: number;
+  groupId?: string;
 }
 
 export interface IUserScoring extends IBaseTimestamp {
-  id?: number;
+  id?: string;
   name: string;
   start: string | number | Date;
 }
@@ -70,41 +70,41 @@ export interface IGroupScoring extends IUserScoring { }
 export interface IEvaluation extends IUserScoring { }
 
 export interface IQuestion extends IBaseTimestamp {
-  id?: number;
+  id?: string;
   subject: string;
 }
 
 export interface IUserScoringLog {
-  id?: number;
-  reviewer: number;
-  targetId: number;
-  subjectId: number;
+  id?: string;
+  reviewer: string;
+  targetId: string;
+  subjectId: string;
   session: 'PRE' | 'POST';
   value: number;
   created_at: string | number | Date;
 }
 
 export interface IGroupScoringLog {
-  id?: number;
-  reviewer: number;
-  targetId: number;
-  subjectId: number;
+  id?: string;
+  reviewer: string;
+  targetId: string;
+  subjectId: string;
   value: number;
   created_at: string | number | Date;
 }
 
 export interface IEvaluationLog {
-  id?: number;
-  reviewer: number;
-  targetId: number;
-  subjectId: number;
-  questionId: number;
+  id?: string;
+  reviewer: string;
+  targetId: string;
+  subjectId: string;
+  questionId: string;
   value: number;
   created_at: string | number | Date;
 }
 
 export interface IEvaluationNamePair {
-  id?: number;
+  id?: string;
   name: string;
   status: boolean;
 }
@@ -130,18 +130,18 @@ export interface ICardDataset {
 
 export interface IConstraint extends IBaseTimestamp {
   description: string;
-  id?: number;
+  id?: string;
   name: string;
 }
 
 export interface IGoal extends IConstraint { }
 
 export interface ICsqLog {
-  constraintId: number;
-  goalId: number;
-  id?: number;
-  reviewer: number;
-  targetId: number;
+  constraintId: string;
+  goalId: string;
+  id?: string;
+  reviewer: string;
+  targetId: string;
   value: number;
 }
 
@@ -155,7 +155,7 @@ export interface ICsqMetric {
       [constraintName: string]: number;
     };
   };
-  groupId: number;
+  groupId: string;
   groupName: string;
   metric: {
     [goalName: string]: {
@@ -195,7 +195,7 @@ export interface IPfsTreeRowStructure {
   groupStdDev?: number;
   kind: 'individual' | 'group';
   // Individual-only
-  studentId?: number;
+  studentId?: string;
   studentName?: string;
 }
 
@@ -213,7 +213,7 @@ export interface IGsqMetric {
       [constraintName: string]: number;
     };
   };
-  groupId: number;
+  groupId: string;
   groupName: string;
 }
 
@@ -235,7 +235,7 @@ export interface IFqMetric {
   data: {
     [goalName: string]: number;
   };
-  groupId: number;
+  groupId: string;
   groupName: string;
 }
 

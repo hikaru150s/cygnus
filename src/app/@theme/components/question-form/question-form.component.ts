@@ -12,9 +12,9 @@ import * as moment from 'moment';
   templateUrl: './question-form.component.html',
 })
 export class QuestionFormComponent implements OnInit {
-  @Input() reviewerId: number;
-  @Input() targetId: number;
-  @Input() evalId: number;
+  @Input() reviewerId: string;
+  @Input() targetId: string;
+  @Input() evalId: string;
   @Input() questionList: IQuestion[] = [];
   logs: IEvaluationLog[] = [];
 
@@ -27,12 +27,12 @@ export class QuestionFormComponent implements OnInit {
     // });
   }
 
-  getValue(questionId: number) {
+  getValue(questionId: string) {
     const needle = this.logs.find(v => v.questionId === questionId);
     return needle ? needle.value : null;
   }
 
-  setValue(questionId: number, value: any) {
+  setValue(questionId: string, value: any) {
     const needle = this.logs.findIndex(v => v.questionId === questionId);
     if (needle >= 0) {
       this.logs[needle].value = value;
