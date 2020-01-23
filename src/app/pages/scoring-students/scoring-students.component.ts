@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerDataSource } from 'ng2-smart-table';
 import { DataSourceService } from 'src/app/@core/utils/data-source.service';
 import {
-  IListPair, IStudent, IUserScoring, ISmartTableCreateConfirmEvent, ISmartTableEditConfirmEvent, ISmartTableDeleteConfirmEvent, IUserScoringLog,
+  IListPair, IUserScoring, ISmartTableCreateConfirmEvent, ISmartTableEditConfirmEvent, ISmartTableDeleteConfirmEvent, IUserScoringLog, IUser,
 } from 'src/app/@core/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
@@ -28,8 +28,8 @@ export class ScoringStudentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ds.getAll<IStudent>('/api/student').subscribe(g => {
-      this.ds.getAll<IUserScoring>('/api/user_scoring').subscribe(s => {
+    this.ds.getAll<IUser>('/api/user?_limit=100000&role_like=STUDENT').subscribe(g => {
+      this.ds.getAll<IUserScoring>('/api/user_scoring?_limit=100000').subscribe(s => {
         this.targetList = g.map(v => ({ title: v.name, value: v.id }));
         this.subjectList = s.map(v => ({ title: v.name, value: v.id }));
         this.settings = {

@@ -28,7 +28,7 @@ export class StudentsComponent implements OnInit {
   ngOnInit() {
     // this.source.load([...new Array(50).keys()].map(v => ({ id: v, name: `Test ${v}`, email: `${v}@test.com` })));
     // this.source.refresh();
-    this.ds.getAll<IGroup>('/api/group').subscribe(data => {
+    this.ds.getAll<IGroup>('/api/group?_limit=100000').subscribe(data => {
       this.groupList = data.map(v => ({ title: v.name, value: v.id }));
       this.settings = {
         add: {

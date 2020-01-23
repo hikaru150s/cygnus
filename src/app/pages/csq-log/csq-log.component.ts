@@ -36,9 +36,9 @@ export class CsqLogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ds.getAll<IGroup>('/api/group').subscribe(g => {
-      this.ds.getAll<IConstraint>('/api/constraint').subscribe(c => {
-        this.ds.getAll<IGoal>('/api/goal').subscribe(l => {
+    this.ds.getAll<IGroup>('/api/group?_limit=100000').subscribe(g => {
+      this.ds.getAll<IConstraint>('/api/constraint?_limit=100000').subscribe(c => {
+        this.ds.getAll<IGoal>('/api/goal?_limit=100000').subscribe(l => {
           this.targetList = g.map(v => ({ title: v.name, value: v.id }));
           this.constraintList = c.map(v => ({ title: v.name, value: v.id }));
           this.goalList = l.map(v => ({ title: v.name, value: v.id }));

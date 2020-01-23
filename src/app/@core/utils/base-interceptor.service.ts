@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { environment as env } from 'src/environments/environment';
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
 import { flatMap } from 'rxjs/operators';
@@ -48,9 +48,16 @@ export class BaseInterceptorService implements HttpInterceptor {
           });
         }
         const handle = next.handle(mutated);
-        handle.subscribe(res => {
-         console.log('Intercept:', { req, mutated, res });
-        });
+        console.log('Intercept:', { req, mutated });
+        //let result: Subscription = null;
+        //result = handle.subscribe(res => {
+        //  console.log('Intercept:', { req, mutated, res });
+        //  try {
+        //    result.unsubscribe();
+        //  } catch {
+        //    // NOP
+        //  }
+        //});
         return handle;
       }),
     );

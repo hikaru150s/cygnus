@@ -34,8 +34,8 @@ export class ScoringGroupsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ds.getAll<IGroup>('/api/group').subscribe(g => {
-      this.ds.getAll<IGroupScoring>('/api/group_scoring').subscribe(s => {
+    this.ds.getAll<IGroup>('/api/group?_limit=100000').subscribe(g => {
+      this.ds.getAll<IGroupScoring>('/api/group_scoring?_limit=100000').subscribe(s => {
         this.targetList = g.map(v => ({ title: v.name, value: v.id }));
         this.subjectList = s.map(v => ({ title: v.name, value: v.id }));
         this.settings = {
