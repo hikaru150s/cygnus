@@ -44,7 +44,7 @@
     "nebular-icons": "1.1.0",
     "ng2-completer": "^3.0.3",
     "ng2-smart-table": "^1.5.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "normalize.css": "8.0.1",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.10.0",
@@ -57,7 +57,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.21",
+    "@angular-devkit/build-angular": "^0.803.24",
     "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
