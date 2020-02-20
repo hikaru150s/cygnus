@@ -3,7 +3,7 @@
 #############
 
 # base image
-FROM node:12.14.1
+FROM node:12.14.1 as build
 
 # set working directory
 WORKDIR /frontend
@@ -29,8 +29,11 @@ RUN ng build --prod --aot
 # base image
 FROM nginx:1.17.8-alpine
 
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
 # copy artifact build from the 'build environment'
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /frontend/dist/cygnus /usr/share/nginx/html
 
 # expose port 80
 EXPOSE 80
