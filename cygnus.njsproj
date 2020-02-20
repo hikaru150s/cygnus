@@ -30,10 +30,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".dockerignore">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include=".editorconfig" />
     <Content Include=".gitignore" />
     <Content Include="angular.json" />
     <Content Include="browserslist" />
+    <Content Include="dockerfile">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="e2e\protractor.conf.js" />
     <Content Include="e2e\tsconfig.json" />
     <Content Include="karma.conf.js" />
